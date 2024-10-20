@@ -1,0 +1,27 @@
+
+.App {
+  header{
+    background-color: yellow;
+    min-height: 20px;
+    display: flex;
+    padding: 5px 10px 30px 10px;
+      nav{
+        display: flex;
+        flex-direction: row;
+        background-color: black;
+        color: blue;
+        text-align: left;
+        gap: 10%;
+          
+        a{
+          padding: 17px 0 0 20px;
+        }
+
+
+         div{
+            display: flex;
+            gap: 3%;
+         }
+      }
+    }
+  }

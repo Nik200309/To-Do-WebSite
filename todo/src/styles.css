@@ -1,0 +1,23 @@
+.App header {
+  background-color: yellow;
+  min-height: 20px;
+  display: flex;
+  padding: 5px 10px 30px 10px;
+}
+.App header nav {
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+  color: blue;
+  text-align: left;
+  gap: 10%;
+}
+.App header nav a {
+  padding: 17px 0 0 20px;
+}
+.App header nav div {
+  display: flex;
+  gap: 3%;
+}
+
+/*# sourceMappingURL=styles.css.map */
