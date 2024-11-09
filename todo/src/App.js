@@ -1,26 +1,32 @@
 import logo from './logo.svg';
 import './App.css';
-import './styles.css';
+import user from './img/user.png'
+import Navbar from './Components/Navbar.js';
+import React from 'react';
+import "./Styles/columns.css"
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <nav>
-        <a>Home</a>
-        <p>Date/Calender</p>
-        <div>
-          <p>Register</p><p>/</p><p>Login</p>
-        </div>
-        
-        <input type="text" placeholder="Search.."></input>  
-        </nav>
-      </header>
-      <body className='App-body'>
-        <p>h</p>
+      <body>
+      <React.Fragment>
+         <Navbar/>
+      </React.Fragment>
+      <div className='main'>
+        <aside className='left'>
+          left
+        </aside>
+        <main>
+          Main content
+        </main>
+        <aside className='right'>
+          right
+        </aside>
+      </div>
       </body>
     </div>
   );
 }
+
 
 export default App;

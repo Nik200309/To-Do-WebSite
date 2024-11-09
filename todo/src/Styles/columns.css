@@ -1,0 +1,48 @@
+*{
+    box-sizing: border-box;
+    margin: 2px;
+}
+
+body{
+    background-color: #087596;
+    text-align: center;
+    font-family: sans-serif;
+    color: white;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    height: 95vh;
+}
+
+.main{
+    display: flex;
+    flex: 1;
+}
+
+header{
+    
+}
+
+.left{
+    background-color: #063e7e;
+    padding: 3em 0 3em 0;
+    margin: 2px;
+    flex: 1 1 150px;
+}
+
+main{
+    background-color: #063e7e;
+    padding: 3em 0;
+    flex: 5 5 100px;
+}
+
+.right{
+    background-color: #063e7e;
+    padding: 3em 0;
+    flex: 1 1 150px;
+}
+
+footer{
+    background-color: #063e7e;
+    padding: 2em 0;
+}

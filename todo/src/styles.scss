@@ -4,7 +4,16 @@
     background-color: yellow;
     min-height: 20px;
     display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap; 
     padding: 5px 10px 30px 10px;
+      
+      .menu-bar{
+        margin-top: 10px;
+        font-size: 33px;
+        background-color: aliceblue;
+      }
+
       nav{
         display: flex;
         flex-direction: row;
@@ -12,7 +21,7 @@
         color: blue;
         text-align: left;
         gap: 10%;
-          
+        width: 680px;
         a{
           padding: 17px 0 0 20px;
         }
@@ -22,6 +31,30 @@
             display: flex;
             gap: 3%;
          }
+      }
+
+      .Search-bar{
+        background-color: aqua;
+        padding: 10px;
+        margin-left: 300px;
+        width: 250px;
+        input{
+          height: 27px;
+          
+        }
+        button {
+          height: 32px;
+        }
+      }
+      .Profile{
+        padding: 10px 10px 0 10px;
+        background-color: bisque;
+        .avatar{
+          vertical-align: middle;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+        }
       }
     }
   }
