@@ -1,30 +1,64 @@
-import { useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import "../Styles/main.css"; 
+import "../Styles/NavbarCSS.css";
+import ProfileBar from "./ProfileBar.js";
+import React from 'react';
+import ProfileButton from "./ProfileButton.js"
 
-function Navbar(){
-    const navRef = useRef();  
 
-    const showNavbar = () =>{
-        navRef.current.classList.toggle("responsive_nav")
-    }
 
-    return(
-        <header>
-            <button className="nav-btn " onClick={showNavbar}>
-                <FaBars/>
-            </button>
-            <h3>Logo</h3>
-            <nav ref={navRef}>
-                <a href="/#">Home</a>
-                <a href="/#">My work</a>
-                <a href="/#">Blog</a>
-                <a href="/#">About me</a>
-                <button className="nav-btn nav-close-btn" onClick={showNavbar}>
-                     <FaTimes/>
+function Navbar() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false); 
+    const menuRef = useRef();
+    const menuBtnRef = useRef();
+
+    
+    const toggleNavbar = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
+    
+    useEffect(() => {
+        const handleClickOutside = (e) => {
+            if (menuRef.current && !menuRef.current.contains(e.target) && !menuBtnRef.current.contains(e.target)) {
+                setIsMenuOpen(false);
+            }
+        };
+
+        document.addEventListener("click", handleClickOutside);
+
+        return () => {
+            document.removeEventListener("click", handleClickOutside);
+        };
+    }, []);
+
+    return (
+        <div>
+            <header>
+                <button
+                    className="nav-btn"
+                    ref={menuBtnRef}
+                    onClick={toggleNavbar}
+                >
+                    <FaBars />
                 </button>
-            </nav>
-        </header>
+                <input type="text" placeholder="Search task" />
+                <h3 id="profileBtn">Logo</h3>
+                <nav ref={menuRef} className={isMenuOpen ? "responsive_nav" : "hide"}>
+                    <a href="/#">Main</a>
+                    <a href="/#">My work</a>
+                    <a href="/#">Blog</a>
+                    <a href="/#">About me</a>
+                    <button className="nav-btn nav-close-btn" onClick={toggleNavbar}>
+                        <FaTimes />
+                    </button>
+                </nav>
+            </header>
+            <React.Fragment>
+                <ProfileBar />
+            </React.Fragment>
+        </div>
     );
 }
+
 export default Navbar;

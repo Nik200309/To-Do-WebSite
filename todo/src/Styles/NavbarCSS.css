@@ -18,7 +18,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 80px;
+    height: 90px;
     padding: 0 2rem;
     background-color: var(--mainColor);
     color: var(--textColor);
@@ -46,7 +46,7 @@ header .nav-btn {
     font-size: 1.5rem;
 }
 
-@media only screen and (max-width: 1024px){
+@media only screen and (max-width: 1200px){
     header .nav-btn{
         visibility: visible;
         opacity: 1;
@@ -56,7 +56,7 @@ header .nav-btn {
     header nav{
         position: fixed;
         top: 0;
-        left: 0;
+        left: -2px;
         height: 800px;
         width: 350px;
         display: flex;
