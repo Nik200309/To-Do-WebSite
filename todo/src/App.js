@@ -4,6 +4,8 @@ import user from './img/user.png'
 import Navbar from './Components/Navbar.js';
 import React from 'react';
 import "./Styles/columns.css"
+import ProfileBar from './Components/ProfileBar.js';
+
 
 function App() {
   return (
@@ -27,6 +29,7 @@ function App() {
     </div>
   );
 }
+
 
 
 export default App;
