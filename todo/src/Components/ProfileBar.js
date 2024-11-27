@@ -2,46 +2,36 @@ import React from "react";
 import {useState, useRef, useEffect} from "react";
 import "../Styles/profile-menu.css";
 
-function ProfileBar (){
-    const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
-    const menuRef = useRef();
-    const menuBtnRef = useRef();
 
-    const profileBtn = document.getElementById("profileBtn")
 
-    const toggleProfileBar = () => {
-        setIsProfileMenuOpen(!isProfileMenuOpen);
-    }
-
-     
-    
+function ProfileBar({ isProfileMenuOpen, closeProfileBar }) {
+    const menuProfileRef = useRef();
     useEffect(() => {
         const handleClickOutside = (e) => {
-            if (
-                menuRef.current && 
-                menuBtnRef.current && 
-                !menuRef.current.contains(e.target) && 
-                !menuBtnRef.current.contains(e.target)
-            ) {
-                setIsProfileMenuOpen(false); // Закрываем меню, если клик вне его
+            if (menuProfileRef.current && !menuProfileRef.current.contains(e.target)) {
+                console.log("Click detected outside ProfileBar");
+                closeProfileBar(); 
             }
         };
     
-        document.addEventListener("click", handleClickOutside);
+        document.addEventListener("mousedown", handleClickOutside);
     
         return () => {
-            document.removeEventListener("click", handleClickOutside);
+            document.removeEventListener("mousedown", handleClickOutside);
         };
-    }, []);
+    }, [closeProfileBar]);
 
-    return(
-    <div>
-        <div className={isProfileMenuOpen ? "responsive_nav" : "hide" } id="profile" ref={menuRef}>
-            <p>Some Text</p>
-        </div> 
-    </div>
- )   
+    return (
+        <div>
+            <div
+                className={isProfileMenuOpen ? "responsive_nav" : "hide"}
+                id="profile"
+                ref={menuProfileRef}
+            >
+                <p>Profile Menu Content</p>
+            </div>
+        </div>
+    );
 }
-
 
 export default ProfileBar;

@@ -4,7 +4,7 @@ import user from './img/user.png'
 import Navbar from './Components/Navbar.js';
 import React from 'react';
 import "./Styles/columns.css"
-import ProfileBar from './Components/ProfileBar.js';
+import ProfileBar from "./Components/ProfileBar.js"; 
 
 
 function App() {
@@ -14,14 +14,14 @@ function App() {
       <React.Fragment>
          <Navbar/>
       </React.Fragment>
-      <div className='main'>
+      <div className='main'> 
         <aside className='left'>
           left
         </aside>
         <main>
           Main content
         </main>
-        <aside className='right'>
+        <aside className='right'> 
           right
         </aside>
       </div>
