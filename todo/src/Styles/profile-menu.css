@@ -1,21 +1,29 @@
-#profile {
- position: fixed;
- bottom: 0;
- right: 8px;
- height: 680px;
- width: 300px;
- display: flex;
- flex-direction: column;
- align-items: center;
- justify-content: center;
- gap: 1.5rem;
- background-color: #1e1e6d;
- transition: 0.5s;
- transform: translateX(200vh)
+#profile{
+    visibility: hidden;
 }
 
+
+
+
 @media only screen and (max-width: 1200px){
-    #profile{
+    #profile {
+        position: fixed;
+        bottom: 0;
+        right: 8px;
+        height: 680px;
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        background-color: #1e1e6d;
+        transition: 0.5s;
+        transform: translateX(200vh)
+       }
+       
+
+    .responsive_nav{
         transform: none;
     }   
 }
