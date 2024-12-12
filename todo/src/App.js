@@ -10,20 +10,12 @@ import ProfileBar from "./Components/ProfileBar.js";
 function App() {
   return (
     <div className="App">
+      <Navbar/>
       <body>
-      <React.Fragment>
-         <Navbar/>
-      </React.Fragment>
-      <div className='main'> 
-        <aside className='left'>
-          left
-        </aside>
-        <main>
-          Main content
-        </main>
-        <aside className='right'> 
-          right
-        </aside>
+      <div className="main">
+        <aside className="left">left</aside>
+        <main>Main content</main>
+        <aside className='right'> right</aside>
       </div>
       </body>
     </div>

@@ -8,9 +8,13 @@ function ProfileBar({ isProfileMenuOpen, closeProfileBar }) {
     const menuProfileRef = useRef();
     useEffect(() => {
         const handleClickOutside = (e) => {
-            if (menuProfileRef.current && !menuProfileRef.current.contains(e.target)) {
-                console.log("Click detected outside ProfileBar");
-                closeProfileBar(); 
+            if(
+                isProfileMenuOpen &&
+                menuProfileRef.current &&
+                !menuProfileRef.current.contains(e.target)
+            ){
+                console.log ("Click detected outside ProfileBar")
+                closeProfileBar();
             }
         };
     
@@ -22,14 +26,13 @@ function ProfileBar({ isProfileMenuOpen, closeProfileBar }) {
     }, [closeProfileBar]);
 
     return (
-        <div>
-            <div
-                className={isProfileMenuOpen ? "responsive_nav" : "hide"}
-                id="profile"
-                ref={menuProfileRef}
+        <div className="profile">
+            <nav
+                className={isProfileMenuOpen ? "responsive_profilenav" : "hide"}
+                ref={menuProfileRef} // Previous mistake: I used to have an id of "profile" for this atribute which overlap the class logic here (id is heghiger in priority )// 
             >
                 <p>Profile Menu Content</p>
-            </div>
+            </nav>
         </div>
     );
 }
